@@ -42,5 +42,8 @@ public class RegisterUserToTournamentRestController {
             return ResponseEntity.status(500).body("Error interno del servidor");
         }
     }
-
+    @GetMapping("/test-register")
+    public ResponseEntity<?> testRegister(){
+        return ResponseEntity.ok().build();
+    }
 }
