@@ -32,6 +32,7 @@ public class RegisterUserToTournamentRestController {
                  | TournamentNotFoundException
                  | RoleNotFoundException
                  | ParamsNotFoundException e) {
+            monitoringService.registerControlledExceptionLog("","/register "+input.toString()+" "+e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (MaximumNumberOfAdministratorsReachedException e) {
             monitoringService.registerControlledExceptionLog("","/register "+input.toString()+" "+e.getMessage());
